@@ -1,61 +1,46 @@
-# ✈️ Runway Planner
+# Runway Planner
 
-Runway Planner is a constraint-based AI scheduler designed for students with
-variable, lab-heavy academic timetables.
+Runway Planner is a scheduling tool powered by AI. It helps students manage their busy, lab-heavy class schedules.
 
-Unlike fixed timetable apps, this system dynamically generates daily schedules
-based on real constraints such as college end time, sleep requirements, energy
-levels, and fatigue-aware rules inspired by aviation duty-time planning.
+Unlike fixed timetable apps, this system creates daily schedules on the fly. It considers real factors like college end time, sleep needs, energy levels, and rules about fatigue inspired by aviation duty-time planning.
 
----
+## Features
 
-## 🚀 Features
+- Daily schedule generation based on constraints
+- Task duration adjustments that consider energy levels
+- Workload reduction based on fatigue (inspired by aviation)
+- Conflict-free planning
+- Leisure system tied to rewards (activities unlock after priority tasks)
+- User-friendly interface using Streamlit session management
+- Clear scheduling logic (no black-box machine learning)
 
-- Constraint-based daily schedule generation
-- Energy-aware task duration adjustment
-- Fatigue-aware workload reduction (aviation-inspired)
-- Guaranteed conflict-free planning
-- Reward-gated leisure system (gaming unlocks after priority tasks)
-- Stateful UI using Streamlit session management
-- Explainable, deterministic scheduling logic (no black-box ML)
+## How It Works
 
----
+The planner uses a rule-based approach:
 
-## 🧠 How It Works
+1. Locks in non-negotiable constraints like sleep, journaling, and meals
+2. Follows fixed academic schedules
+3. Recognizes late-duty fatigue based on when college ends
+4. Allocates time for career, exercise, and leisure
+5. Works backwards from fixed sleep deadlines to create schedules
 
-The planner follows a rule-based planning pipeline:
+This leads to realistic, sustainable schedules with no time clashes.
 
-1. Locks non-negotiable constraints (sleep, journaling, meals)
-2. Respects fixed academic schedules
-3. Detects late-duty fatigue based on college end time
-4. Dynamically allocates career, exercise, and leisure blocks
-5. Computes schedules backward from fixed sleep deadlines
+## Aviation-Inspired Design
 
-This ensures realistic, sustainable schedules without time clashes.
+The scheduler includes a fatigue-aware constraint modeled after commercial aviation duty-time regulations.
 
----
+If academic activities finish late, the system automatically lessens the workload to prevent over-scheduling. It prioritizes safety and sustainability over idealized plans.
 
-## ✈️ Aviation-Inspired Design
-
-The scheduler incorporates a fatigue-aware constraint inspired by
-commercial aviation duty-time regulations.
-
-If academic duties end late in the day, the system automatically
-reduces workload to prevent over-scheduling, prioritizing safety and
-sustainability over idealized plans.
-
----
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 - Python
 - Streamlit
 - Datetime module
 
----
-
-## ▶️ Run Locally
+## Run Locally
 
 ```bash
 pip install streamlit
 streamlit run app.py
+```
